@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import mockData from "../data/mockData";
 
@@ -12,6 +12,11 @@ interface PersonData {
 }
 
 function AddPerson() {
+
+    useEffect(() => {
+        document.title = "PhoneBook | Add Person";
+      });
+
   const initialFormData: PersonData = {
     id: mockData.length + 1,
     firstName: "",
@@ -20,7 +25,7 @@ function AddPerson() {
     phoneNumber: "",
     notes: "",
   };
-  
+
   const [formData, setFormData] = useState<PersonData>(initialFormData);
 
   const navigate = useNavigate();

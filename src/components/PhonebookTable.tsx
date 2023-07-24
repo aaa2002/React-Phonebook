@@ -1,8 +1,11 @@
-import React from "react";
+import React, {useEffect} from "react";
 import mockData from "../data/mockData";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function PhonebookTable() {
+  useEffect(() => {
+    document.title = "PhoneBook | People";
+  });
   return (
     <>
       <table className="min-w-full divide-y divide-gray-200 shadow-lg overflow-hidden rounded-lg">

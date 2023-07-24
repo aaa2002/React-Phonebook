@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useParams } from "react-router-dom";
 import mockData from "../data/mockData";
 import { useNavigate } from "react-router-dom";
@@ -10,6 +10,11 @@ function PersonView() {
   console.log(currentId);
 
   const person = mockData.find((item) => item.id === currentId);
+
+  useEffect(() => {
+    const currentPerson = mockData[mockData.findIndex((item) => item.id === currentId)];
+    document.title = `PhoneBook | ${currentPerson.firstName} ${currentPerson.lastName}`;
+  });
 
   const handleDelete = () => {
     const indexToDelete = mockData.findIndex((item) => item.id === currentId);
