@@ -23,7 +23,7 @@ function PhonebookTable() {
         </thead>
         <tbody className="bg-white divide-y divide-gray-200">
           {mockData.map((contact: any) => (
-            <tr>
+            <tr key={contact.id}>
               <td className="px-6 py-4 whitespace-nowrap">
                 {contact.firstName} {contact.lastName}
               </td>
@@ -34,6 +34,8 @@ function PhonebookTable() {
               <td className="px-6 py-4 whitespace-nowrap">{contact.notes}</td>
             </tr>
           ))}
+
+          
         </tbody>
       </table>
     </>

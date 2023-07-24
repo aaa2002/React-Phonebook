@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import mockData from "../data/mockData";
 
 interface PersonData {
   id: number;
@@ -9,18 +11,19 @@ interface PersonData {
   notes: string;
 }
 
-const initialFormData: PersonData = {
-
-    id: 0,
+function AddPerson() {
+  const initialFormData: PersonData = {
+    id: mockData.length + 1,
     firstName: "",
     lastName: "",
     company: "",
     phoneNumber: "",
     notes: "",
-}
-
-function AddPerson() {
+  };
+  
   const [formData, setFormData] = useState<PersonData>(initialFormData);
+
+  const navigate = useNavigate();
 
   const handleChange = (event: any) => {
     const { name, value } = event.target;
@@ -33,7 +36,24 @@ function AddPerson() {
   const handleSubmit = (event: any) => {
     event.preventDefault();
 
+    const newPerson: PersonData = {
+      ...formData,
+    };
+
+    mockData.push(newPerson);
+
     console.log("Submitted data:", formData);
+
+    setFormData({
+      id: 0,
+      firstName: "",
+      lastName: "",
+      company: "",
+      phoneNumber: "",
+      notes: "",
+    });
+
+    navigate("/");
   };
 
   return (
