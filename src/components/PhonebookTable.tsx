@@ -1,5 +1,6 @@
 import React from "react";
 import mockData from "../data/mockData";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function PhonebookTable() {
   return (
@@ -25,7 +26,9 @@ function PhonebookTable() {
           {mockData.map((contact: any) => (
             <tr key={contact.id}>
               <td className="px-6 py-4 whitespace-nowrap">
-                {contact.firstName} {contact.lastName}
+                <Link to={`/view/${contact.id}`} className="hover:text-dark hover:border-b border-primary">
+                  {contact.firstName} {contact.lastName}
+                </Link>
               </td>
               <td className="px-6 py-4 whitespace-nowrap">{contact.company}</td>
               <td className="px-6 py-4 whitespace-nowrap">
@@ -34,8 +37,6 @@ function PhonebookTable() {
               <td className="px-6 py-4 whitespace-nowrap">{contact.notes}</td>
             </tr>
           ))}
-
-          
         </tbody>
       </table>
     </>
