@@ -1,0 +1,60 @@
+The candidate should do at home the following mini-project between phonescreen interview and on-site/online second stage interview.
+
+Create a Phonebook Agenda Application with mocked data on the serverside.
+Use either Angular or React or Vue, whichever you feel most comfortable with.
+
+There is no need for a REST server as backend server.
+We are interested only in the UI components.
+
+Person details
+
+first name
+last name
+company
+phone number
+notes
+
+Screen 1 - Table with Persons
+
+sortable columns
+search box
+dropdown with selection by company
+
+e.g. Connectors view from Conduit project
+
+Screen 2 - Add new person
+
+person details input fields
+click on button to “add new entry”
+popup page
+save button
+
+e.g. add a Connector view from Conduit project
+
+Screen 3 - Edit details of an entry
+
+update phone number
+
+Screen 4 - View person details
+
+looking to see use of query params and router configuration
+
+e.g. click edit a connector on the connectors view from Conduit project
+
+--------------------------------------------------------
+
+Hints:
+
+what we look for:
+Architecture, how good is the code in following well established design patterns
+Code Style, how readable is the code
+Functionality, how much of the functionality is implemented
+Stability, how many bugs does it have
+Design, how good does it look
+
+
+This project should take no more than 6h / candidate.
+We don’t expect a perfect project.
+We only expect some familiarity with most used UI frameworks.
+
+This project will serve as a base of the discussion for the second-stage interview.
